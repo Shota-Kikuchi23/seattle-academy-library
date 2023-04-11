@@ -48,23 +48,23 @@ public class AccountController {
 		logger.info("Welcome createAccount! The client locale is {}.", locale);
 
 		// バリデーションチェック、パスワード一致チェック（タスク１）
-		
-		if(password.length() >= 8 && password.matches("^[A-Za-z0-9]+$")) {
-			if(passwordForCheck.equals(password)) {
+
+		if (password.length() >= 8 && password.matches("^[A-Za-z0-9]+$")) {
+			if (passwordForCheck.equals(password)) {
 				UserInfo userInfo = new UserInfo();
 				userInfo.setEmail(email);
 				userInfo.setPassword(password);
 				usersService.registUser(userInfo);
 				return "redirect:/login";
 			} else {
-			model.addAttribute("errorMessage", "パスワードが一致しません。");
-		    return "createAccount";
+				model.addAttribute("errorMessage", "パスワードが一致しません。");
+				return "createAccount";
 			}
 		} else {
 			model.addAttribute("errorMessage", "パスワードが一致しません。");
-		    return "createAccount";
+			return "createAccount";
 		}
-		
+
 		// パラメータで受け取ったアカウント情報をDtoに格納する。
 
 	}
