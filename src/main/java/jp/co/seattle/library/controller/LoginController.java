@@ -42,13 +42,11 @@ public class LoginController {
 		UserInfo selectedUserInfo = usersService.selectUserInfo(email, password);
 
 		// ユーザーが存在すればログイン、存在しなければエラー(タスク２)
-		if(selectedUserInfo != null ) {
+		if (selectedUserInfo != null) {
 			return "redirect:/home";
 		} else {
 			model.addAttribute("errorMessage", "パスワードが一致しません。");
-		    return "createAccount";
+			return "createAccount";
 		}
 	}
 }
-		
-	
