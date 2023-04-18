@@ -64,7 +64,7 @@ public class BookUtil {
 
 			String publishDateString = formatter.format(publishDateDate);
 
-			if (publishDateString == publishDate) {
+			if (publishDateString.equals(publishDateString)) {
 				return false;
 			}
 			return true;
