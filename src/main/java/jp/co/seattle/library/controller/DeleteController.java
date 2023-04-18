@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import jp.co.seattle.library.commonutil.BookUtil;
 import jp.co.seattle.library.service.BooksService;
-import jp.co.seattle.library.service.ThumbnailService;
 
 @Controller
 public class DeleteController {
@@ -21,10 +19,7 @@ public class DeleteController {
 
 	@Autowired
 	private BooksService booksService;
-	@Autowired
-	private ThumbnailService thumbnailService;
-	@Autowired
-	private BookUtil bookUtil;
+
 
 	@RequestMapping(value = "/deleteBook", method = RequestMethod.POST)
 	public String deleteBook(Locale locale, @RequestParam("bookId") int bookId, Model model) {
